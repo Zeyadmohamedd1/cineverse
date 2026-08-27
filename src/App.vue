@@ -1,13 +1,24 @@
 <template>
-  <navbar-component/>
-  <RouterView />
+  <div class="bg-dark text-white min-vh-100">
+    <navbar-component />
+    <RouterView v-slot="{ Component }">
+      <KeepAlive>
+        <component :is="Component" :key="$route.fullPath" />
+      </KeepAlive>
+
+      <!--<KeepAlive>  بيخلي Vue يحتفظ بالصفحة في الذاكرة لما تخرج منها، بدل ما يمسحها ويعملها من جديد.-->
+    </RouterView>
+  </div>
 </template>
+
+
+
 <script>
 import NavbarComponent from './components/NavbarComponent.vue'
 
 export default {
-  components: {
-    NavbarComponent
-  }
+    components: {
+        NavbarComponent
+    }
 }
 </script>

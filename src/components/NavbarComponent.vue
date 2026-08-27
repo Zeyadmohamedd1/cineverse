@@ -19,13 +19,24 @@
             <RouterLink class="nav-link" to="/movies"> Movies </RouterLink>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to='/tv'> TV </router-link>
+            <router-link class="nav-link" to="/tv"> TV </router-link>
           </li>
-           <li class="nav-item">
-            <router-link class="nav-link" to='/anime'>Anime </router-link>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/anime">Anime </router-link>
           </li>
         </ul>
+      <NavbarSearchComponent v-if="$route.path !== '/search'" />
       </div>
     </div>
   </nav>
 </template>
+
+<script>
+import NavbarSearchComponent from './NavbarSearchComponent.vue'
+
+export default {
+  components: {
+    NavbarSearchComponent
+  }
+}
+</script>

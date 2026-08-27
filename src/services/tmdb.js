@@ -76,3 +76,11 @@ export function getPopularAnime(page = 1) {
     `/discover/tv?with_genres=16&with_original_language=ja&sort_by=popularity.desc&page=${page}`
   )
 }
+export function getDetails(type, id) {
+  return getData(`/${type}/${id}?language=en-US`)
+}
+export function searchMedia(query) {
+  return getData(
+    `/search/multi?query=${encodeURIComponent(query)}&language=en-US&page=1`
+  )
+}

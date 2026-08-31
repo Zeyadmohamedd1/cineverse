@@ -24,19 +24,31 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/anime">Anime </router-link>
           </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/favorites">
+              Favorites ({{ favoritesStore.favorites.length }})
+            </router-link>
+          </li>
         </ul>
-      <NavbarSearchComponent v-if="$route.path !== '/search'" />
+        <NavbarSearchComponent v-if="$route.path !== '/search'" />
       </div>
     </div>
   </nav>
 </template>
 
 <script>
-import NavbarSearchComponent from './NavbarSearchComponent.vue'
-
+import NavbarSearchComponent from "./NavbarSearchComponent.vue";
+import { useFavoritesStore } from "../stores/favorites.js";
 export default {
+  setup() {
+    const favoritesStore = useFavoritesStore();
+
+    return {
+      favoritesStore,
+    };
+  },
   components: {
-    NavbarSearchComponent
-  }
-}
+    NavbarSearchComponent,
+  },
+};
 </script>

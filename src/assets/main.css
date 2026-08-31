@@ -21,3 +21,31 @@ body {
 .nav-link.router-link-active {
     color: #e50914 !important;
 }
+
+.card img {
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.section-title {
+    border-left: 4px solid #e50914;
+    padding-left: 10px;
+}
+
+.media-title {
+  min-height: 72px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 320px !important;
+        padding: 30px !important;
+    }
+}

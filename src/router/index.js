@@ -6,6 +6,7 @@ import TVShowsView from '@/views/TVShowsView.vue'
 import AnimeView from '@/views/AnimeView.vue'
 import DetailsView from '@/views/DetailsView.vue'
 import SearchView from '@/views/SearchView.vue'
+import FavoritesView from '@/views/FavoritesView.vue'
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [{
@@ -32,6 +33,10 @@ const router = createRouter({
   {
     path: '/search',
     component: SearchView
+  },
+   {
+    path: '/favorites',
+    component: FavoritesView
   }
   ],
   scrollBehavior(to, from, savedPosition) {

@@ -8,6 +8,7 @@
 
       <!--<KeepAlive>  بيخلي Vue يحتفظ بالصفحة في الذاكرة لما تخرج منها، بدل ما يمسحها ويعملها من جديد.-->
     </RouterView>
+    <FooterComponent />
   </div>
 </template>
 
@@ -15,10 +16,11 @@
 
 <script>
 import NavbarComponent from './components/NavbarComponent.vue'
-
+import FooterComponent from './views/FooterComponent.vue';
 export default {
     components: {
-        NavbarComponent
+        NavbarComponent,
+        FooterComponent
     }
 }
 </script>
